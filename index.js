@@ -47,6 +47,10 @@ const verifyToken = async (req, res, next) => {
   
 };
 
+app.get("/", (req, res) => {
+  res.send("Welcome to WonderLast server!");
+});
+
 // http://localhost:5000/destinations
 app.get("/destinations", async (req, res) => {
   const cursor = destinationCollection.find({});
@@ -119,3 +123,5 @@ app.delete("/my-bookings/:id", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+export default app;
